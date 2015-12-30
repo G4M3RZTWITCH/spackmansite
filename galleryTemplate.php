@@ -64,6 +64,7 @@
 
 <script>
 	var viewModel = getGridViewModel();
+	viewModel.initZoom();
 	$('.grid-wrapper').on('mouseenter', '.center_image', function(e){
 		var $hoveredimagescrim = $(this).siblings('.image_zoom_scrim');
 		$hoveredimagescrim.addClass('hover_zoom_active');
@@ -79,7 +80,7 @@
             // we unwrap our imageUrl to get a subscription to it,
             // so we're called when it changes.
             // Use ko.utils.unwrapObservable for older versions of Knockout
-            imageSource  = ko.unwrap(valueAccessor());
+        imageSource  = ko.unwrap(valueAccessor());
         
         $element.attr('src', imageSource);
         

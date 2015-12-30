@@ -18,6 +18,8 @@
 	header('Content-Type: application/javascript');
 ?>
  function getGridViewModel() {
+ 	var $cache  = {};
+	$cache.page = $('#page-wrap');
 	return {"grid" : {"imageNumber" : ko.observable(),
 				"images" :  [
 					<?php 
@@ -42,7 +44,11 @@
 					?>
                 ]
 				//"gridimageloaded" = function(){console.log('image loaded');}
-			}};
+			},
+			initZoom : function(){
+				$cache.page.on('click', 'a.expand', function(event){alert('heyo')});
+			}
+			};
  }
 
 
