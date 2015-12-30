@@ -87,7 +87,6 @@
         $element.one('load', function() {
 			$('.js-masonry').masonry();
         });
-        
     }
 };
 	

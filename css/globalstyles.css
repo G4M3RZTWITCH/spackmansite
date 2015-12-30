@@ -33,3 +33,4 @@ body{background-color:#111517}
     background: transparent;
     overflow: auto;
 	visibility: hidden}
+#zoom-modal.reveal{visibility: visible}
