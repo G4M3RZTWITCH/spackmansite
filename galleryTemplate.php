@@ -63,7 +63,7 @@
 		<img id="modal_image" data-bind="attr : {src : $data.zoomImage}"></img>
 	</div>
 	<!-- ko if: $data.zoomImage -->
-		<div id="scrim" style="position: fixed; width: 100%; height: 100%; opacity: 0.7" data-bind="click: $data.unZoom"></div>
+		<div id="scrim" data-bind="click: $data.unZoom"></div>
 	<!-- /ko -->
 </body>
 
