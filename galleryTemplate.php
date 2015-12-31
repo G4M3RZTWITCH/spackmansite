@@ -52,26 +52,24 @@
 				<!--ko foreach: grid.images -->
 				<div class="grid-item large-2 medium-3 small-6 columns grid-image end">
 					<div class="grid_image_wrapper">
-						<img class="center_image" data-bind='lazyImage: url, attr : {alt : alt, title : title, "data-zoom" : $data.zoomurl}' data-bind="click: function(){return;}">
-						<div class="image_zoom_scrim" data-reveal-id="zoom-modal"><a href="#" class="expand">+</a></div>
+						<img class="center_image" data-bind='lazyImage: url, attr : {alt : alt, title : title, "data-zoom" : $data.zoomurl}'>
+						<div class="image_zoom_scrim" data-reveal-id="zoom-modal" data-bind="click: $parent.zoomIn"><a href="#" class="expand">+</a></div>
 					</div>
 				</div>
 				<!--/ko -->
 			</div>
 	</div>
-	<div id="zoom-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog"></div>
+	<div id="zoom-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+		<img data-bind="attr : {src : $data.zoomImage}"></img>
+	</div>
+	<!-- ko if: $data.zoomImage -->
+		<div id="scrim" style="position: fixed; width: 100%; height: 100%; opacity: 0.7" data-bind="click: $data.unZoom"></div>
+	<!-- /ko -->
 </body>
 
 <script>
 	var viewModel = getGridViewModel();
 	viewModel.initZoom();
-	$('.grid-wrapper').on('mouseenter', '.center_image', function(e){
-		var $hoveredimagescrim = $(this).siblings('.image_zoom_scrim');
-		$hoveredimagescrim.addClass('hover_zoom_active');
-		$hoveredimagescrim.one('mouseleave', function(e){
-			$('.hover_zoom_active').removeClass('hover_zoom_active');
-		});
-	});
 	
 	
 	ko.bindingHandlers.lazyImage = {

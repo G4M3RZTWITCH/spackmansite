@@ -20,8 +20,10 @@
  function getGridViewModel() {
  	var $cache  = {};
 	$cache.page = $('#page-wrap');
-	return {"grid" : {"imageNumber" : ko.observable(),
-				"images" :  [
+	$cache.zoomModal = $('#zoom-modal');
+	var model = {"grid" : {
+				imageNumber : ko.observable(),
+				images :  [
 					<?php 
 					if(in_array($gallery, $whitelistgalleries)){
 						end($galleryimages);
@@ -44,11 +46,28 @@
 					?>
                 ]
 				//"gridimageloaded" = function(){console.log('image loaded');}
-			},
-			initZoom : function(){
-				$cache.page.on('click', 'a.expand', function(event){alert('heyo')});
-			}
+				},
+				zoomImage : ko.observable(),
+				zoomIn : function(data, event){
+					model.zoomImage(data.zoomurl); 
+					$cache.zoomModal.addClass('reveal');
+				},
+				unZoom: function(){
+					$cache.zoomModal.removeClass('reveal');
+					model.zoomImage('');
+				},
+				initZoom : function(){
+					$('.grid-wrapper').on('mouseenter', '.center_image', function(e){
+						var $hoveredimagescrim = $(this).siblings('.image_zoom_scrim');
+						$hoveredimagescrim.addClass('hover_zoom_active');
+						$hoveredimagescrim.one('mouseleave', function(e){
+							$('.hover_zoom_active').removeClass('hover_zoom_active');
+						});
+					});
+				
+				}
 			};
+	return model;
  }
 
 
