@@ -1,5 +1,10 @@
 <!doctype html>
+<?php
 
+	$gallery = $_GET['galleryid'];
+	$isMainGallery = $gallery === "MainGallery";
+	
+?>
 <html lang="en">
 <head> 
 	<meta charset="utf-8">
@@ -17,6 +22,24 @@
 		.grid_image_wrapper{border: 3px solid white; position: relative}
 		#page-wrap{margin-top: 15px}		
 		.hover_zoom_active{position:absolute; bottom:0; left: 0; right:0; overflow: hidden; height: 100%; width: 100%; display: block; background: rgba(0, 0, 0, 0.6)}
+		<?php if ($isMainGallery): ?>
+		.hover_zoom_active a.expand{display: block; visibility:visible; opacity:.6; transition-delay:0s;}
+		a.expand{
+			font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
+			width: 100%;
+			visibility:hidden;
+			opacity:0;
+			transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+			position: absolute;
+			z-index: 100;
+			height: 60px;
+			text-align: center;
+			color: #fff;
+			line-height: 50px;
+			font-weight: 700;
+			font-size: 30px;
+			bottom: 50%;}
+		<?php else: ?>
 		.hover_zoom_active a.expand{display: block; visibility:visible; opacity:1; transition-delay:0s;}
 		a.expand{
 			visibility:hidden;
@@ -41,19 +64,21 @@
 			right: 0;
 			bottom: 50%;
 			margin: 0 auto -30px auto;}
+		<?php endif ?>
 	</style>
  
     </head>
 <body>
 	<?php include 'navbar.php';?>
 	<div id="page-wrap" class="row">
-		<div class="js-masonry large-9 medium-9 small-12 columns medium-offset-2 large-offest-2" data-masonry-options='{ "itemSelector": ".grid-item" }'>
+		<div class="large-3 medium-1 columns show-for-large-up" id="side_banner"><img id="banner_image" data-bind="attr : {src : sidebarimage}"/></div>
+		<div class="js-masonry large-9 medium-9 small-12 columns" data-masonry-options='{ "itemSelector": ".grid-item" }'>
 			<div class="row grid-wrapper">
 				<!--ko foreach: grid.images -->
-				<div class="grid-item large-2 medium-3 small-6 columns grid-image end">
+				<div class="grid-item <?php if ($isMainGallery): ?>large-4 medium-4 <?php else: ?>large-2 medium-3<?php endif ?> small-6 columns grid-image end">
 					<div class="grid_image_wrapper">
 						<img class="center_image" data-bind='lazyImage: url, attr : {alt : alt, title : title, "data-zoom" : $data.zoomurl}'>
-						<div class="image_zoom_scrim" data-reveal-id="zoom-modal" data-bind="click: $parent.zoomIn"><a href="#" class="expand">+</a></div>
+						<div class="image_zoom_scrim" data-reveal-id="zoom-modal" data-bind="click: <?php if ($isMainGallery): ?>function(){<?php echo "window.location='" . $galleryprefix ."'" . "+" ?>$data.title;}<?php else: ?>$parent.zoomIn<?php endif ?>"><a href="#" class="expand"<?php if ($isMainGallery): ?>data-bind="text : $data.title"<?php ?><?php else: ?><?php endif ?>><?php if ($isMainGallery): ?><?php ?><?php else: ?>+<?php endif ?></a></div>
 					</div>
 				</div>
 				<!--/ko -->
@@ -70,7 +95,7 @@
 <script>
 	var viewModel = getGridViewModel();
 	viewModel.initZoom();
-	
+
 	
 	ko.bindingHandlers.lazyImage = {
     update: function(element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
@@ -91,4 +116,5 @@
 	
 </script>
 <?php include 'footer.php';?>
+
 </html>

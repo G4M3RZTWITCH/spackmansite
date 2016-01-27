@@ -3,6 +3,7 @@
 	$sliderimages = scandir(dirname(dirname(__FILE__)) . '\\img\\homepageslider', 1);
 	$whitelistgalleries = scandir(dirname(dirname(__FILE__)) . '\\img\\galleries\\', 1);
 	$headerimagefileprefix = "\\img\\homepageslider\\";
+	$sidebarimage = "\\img\/FloralSpackman05.jpg";
 	$gallery = '';
 	$gallerypath = '';
 	$isMainGallery = false;
@@ -17,12 +18,16 @@
 	$counter = 1;
 	header('Content-Type: application/javascript');
 ?>
+
+var sidebarimage = '<?php echo $sidebarimage; ?>';
+
  function getGridViewModel() {
  	var $cache  = {};
 	$cache.page = $('#page-wrap');
 	$cache.zoomModal = $('#zoom-modal');
 	var model = {"grid" : {
 				imageNumber : ko.observable(),
+				sidebarimage : sidebarimage,
 				images :  [
 					<?php 
 					if(in_array($gallery, $whitelistgalleries)){
@@ -64,7 +69,6 @@
 							$('.hover_zoom_active').removeClass('hover_zoom_active');
 						});
 					});
-				
 				}
 			};
 	return model;
@@ -74,6 +78,7 @@
 function getHomepageViewModel() {
     
     return {"homepage" : {
+				"sidebarimage" : sidebarimage,
                 "images" : [
 					<?php 
 					end($sliderimages);
@@ -96,3 +101,4 @@ function getHomepageViewModel() {
                 ]}
            };
 }
+

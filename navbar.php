@@ -1,6 +1,7 @@
 <?php 
 	$homepage = "http://" . $_SERVER['SERVER_NAME'];
-	$gallerypage = "/galleryTemplate.php?galleryid=MainGallery";
+	$galleryprefix = "/galleryTemplate.php?galleryid=";
+	$gallerypage = $galleryprefix . "MainGallery";
 ?>
 
 <header>

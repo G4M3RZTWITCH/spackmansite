@@ -45,3 +45,4 @@ body{background-color:#111517}
 	background-color: black;}
 #modal_image{vertical-align: bottom}
 #zoom-modal.reveal{visibility: visible; opacity: 1}
+#banner_image{display: block; margin-left: auto; margin-right: auto;}
