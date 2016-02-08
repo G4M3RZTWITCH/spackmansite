@@ -1,5 +1,5 @@
 <?php 
-	$galleryimages = scandir(dirname(dirname(__FILE__)) . '\\img\\galleries\\', 1);
+	$galleryimages = scandir('/home/aspackman/public_html/img/galleries', 1);
 	$galleriesprefix = "\\img\\gallaries\\";
 	$counter = 1;
 	header('Content-Type: application/javascript');
@@ -18,6 +18,9 @@ function getMenuViewModel() {
 								$last = key($galleryimages);
 								reset($galleryimages);
 									foreach ($galleryimages as $key => $value){
+									if($value === "MainGallery"){
+										continue;
+									}
 									if($value === "." || $value === ".."){
 										continue;
 									}
@@ -31,8 +34,7 @@ function getMenuViewModel() {
 									}
 									
 								?>
-						], 
-						"legal" : []},
+						]},
 				"visiblelist" : ko.observableArray([])};
  }
  

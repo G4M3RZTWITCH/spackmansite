@@ -1,7 +1,7 @@
 <?php 
 //need to protect against injection.  white list it
-	$sliderimages = scandir(dirname(dirname(__FILE__)) . '\\img\\homepageslider', 1);
-	$whitelistgalleries = scandir(dirname(dirname(__FILE__)) . '\\img\\galleries\\', 1);
+	$sliderimages = scandir('/home/aspackman/public_html/img/homepageslider', 1);
+	$whitelistgalleries = scandir('/home/aspackman/public_html/img/galleries', 1);
 	$headerimagefileprefix = "\\img\\homepageslider\\";
 	$sidebarimage = "\\img\/FloralSpackman05.jpg";
 	$gallery = '';
@@ -11,8 +11,8 @@
 		$gallery = $_GET['galleryid'];
 		$isMainGallery = $gallery === "MainGallery";
 		if(!empty($gallery) && strlen($gallery) > 0){
-			$gallerypath = '/img/galleries/' . $gallery . '/';
-			$galleryimages = scandir(dirname(dirname(__FILE__)) . '\\img\\galleries\\' . $gallery, 1);
+			$gallerypath = 'img/galleries/' . $gallery . '/';
+			$galleryimages = scandir('/home/aspackman/public_html/img/galleries/' . $gallery, 1);
 		}
 	}
 	$counter = 1;
@@ -47,7 +47,7 @@ var sidebarimage = '<?php echo $sidebarimage; ?>';
 								echo '{"url" : "' . $gallerypath . $value . '", "alt" : "'.$withoutExt.'", "title" : "'.$withoutExt.'", "zoomurl" : "' . $gallerypath . $value . '"}' . $delim . PHP_EOL;
 								$counter++;
 						}
-					}							
+					}						
 					?>
                 ]
 				//"gridimageloaded" = function(){console.log('image loaded');}
