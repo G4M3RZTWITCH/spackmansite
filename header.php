@@ -2,7 +2,7 @@
 	$gallerypath = '';
 	$appender = '';
 	if(!empty($_GET['galleryid']) && isset($_GET['galleryid'])){
-		$gallery = $_GET['galleryid'];
+		$gallery = htmlspecialchars($_GET['galleryid'], ENT_QUOTES);
 		$appender = '?galleryid='.$gallery;
 		if(!empty($gallery) and strlen($gallery) > 0){
 			$gallerypath = '\\img\\galleries\\' . $gallery;
@@ -19,12 +19,12 @@
 <meta charset="utf-8">
 
 <title>Spackman Photography</title>
-<meta name="description" content="Anna Spackman delivers beautiful photos for whatever occasion is at hand.  Proudly serving the Dallas, Arlington, and Fort Worth areas of Texas.">
+<meta name="description" content="Anya Spackman delivers beautiful photos for whatever occasion is at hand.  Proudly serving the Dallas, Arlington, and Fort Worth areas of Texas.">
 <meta name="author" content="Chris Santiago">
 <meta property="og:title" content="Spackman Photography"/>
 <meta property="og:image" content="http://spackmanphotography.com//img/homepageslider/lolly.jpg"/>
-<meta property="og:site_name" content="Anna Spackman Photography"/>
-<meta property="og:description" content="Anna Spackman delivers beautiful photos for whatever occasion is at hand.  Proudly serving the Dallas, Arlington, and Fort Worth areas of Texas."/>
+<meta property="og:site_name" content="Anya Spackman Photography"/>
+<meta property="og:description" content="Anya Spackman delivers beautiful photos for whatever occasion is at hand.  Proudly serving the Dallas, Arlington, and Fort Worth areas of Texas."/>
 	
 <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css" />
 <link rel="stylesheet" href="css/globalstyles.css" />

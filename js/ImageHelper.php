@@ -8,7 +8,8 @@
 	$gallerypath = '';
 	$isMainGallery = false;
 	if(!empty($_GET['galleryid'])){
-		$gallery = $_GET['galleryid'];
+		$gallery = htmlspecialchars($_GET['galleryid'], ENT_QUOTES);
+
 		$isMainGallery = $gallery === "MainGallery";
 		if(!empty($gallery) && strlen($gallery) > 0){
 			$gallerypath = 'img/galleries/' . $gallery . '/';

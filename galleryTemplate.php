@@ -1,7 +1,8 @@
 <!doctype html>
 <?php
 
-	$gallery = $_GET['galleryid'];
+	$gallery = htmlspecialchars($_GET['galleryid'], ENT_QUOTES);
+
 	$isMainGallery = $gallery === "MainGallery";
 	
 ?>
@@ -65,7 +66,7 @@
 				<!--ko foreach: grid.images -->
 				<div class="grid-item <?php if ($isMainGallery): ?>large-4 medium-4 <?php else: ?>large-2 medium-3<?php endif ?> small-6 columns grid-image end">
 					<div class="grid_image_wrapper">
-						<img class="center_image" data-bind='lazyImage: url, attr : {alt : alt, title : title, "data-zoom" : $data.zoomurl}'>
+						<div class="img_hidden center_image"><img class="center_image" data-bind='lazyImage: url, attr : {alt : alt, title : title, "data-zoom" : $data.zoomurl}'></div>
 						<div class="image_zoom_scrim" data-reveal-id="zoom-modal" data-bind="click: <?php if ($isMainGallery): ?>function(){<?php echo "window.location='" . $galleryprefix ."'" . "+" ?>$data.title;}<?php else: ?>$parent.zoomIn<?php endif ?>"><a href="#" class="expand"<?php if ($isMainGallery): ?>data-bind="text : $data.title"<?php ?><?php else: ?><?php endif ?>><?php if ($isMainGallery): ?><?php ?><?php else: ?>+<?php endif ?></a></div>
 					</div>
 				</div>
@@ -96,6 +97,7 @@
         $element.attr('src', imageSource);
         
         $element.one('load', function() {
+			$(this).closest('.img_hidden').removeClass('img_hidden');
 			$('.js-masonry').masonry();
         });
     }
@@ -104,5 +106,6 @@
 	
 </script>
 <?php include 'footer.php';?>
+
 
 </html>
