@@ -2,11 +2,7 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
 
-    <title>Spackman Home</title>
-    <meta name="description" content="Homepage Spackman photography">
-    <meta name="author" content="Me">
 	<?php include 'header.php'?>
 	<script src="js/vendor/cycle2.js"></script>
 </head>
@@ -32,10 +28,10 @@
         <div class="large-9 small-12 columns right_text_zone end">
 			<div class="inner_text large-9 medium-9 small-11 columns  large-offset-1 medium-offset-1 small-offset-1 end">
 				
-				<p class="text_section"><span class="bolder">My Rates</span> 
+				<p class="text_section"><span class="bolder"></span> 
                 
 				<ul>
-					<li></li>
+					<li>Under Construction</li>
 				</ul></p>
 			</div>
         </div>

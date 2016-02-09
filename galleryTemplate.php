@@ -7,21 +7,9 @@
 ?>
 <html lang="en">
 <head> 
-	<meta charset="utf-8">
-	
-    <title>Spackman Home</title>
-    <meta name="description" content="Homepage Spackman photography">
-    <meta name="author" content="Me">
 	<?php include 'header.php'?>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 	<style>
-		.grid-item {
-		  margin-bottom: 0.5rem;
-		}
-		.grid-image{margin-top: 2em; cursor: pointer}
-		.grid_image_wrapper{border: 3px solid white; position: relative}
-		#page-wrap{margin-top: 15px}		
-		.hover_zoom_active{position:absolute; bottom:0; left: 0; right:0; overflow: hidden; height: 100%; width: 100%; display: block; background: rgba(0, 0, 0, 0.6)}
 		<?php if ($isMainGallery): ?>
 		.hover_zoom_active a.expand{display: block; visibility:visible; opacity:.6; transition-delay:0s;}
 		a.expand{

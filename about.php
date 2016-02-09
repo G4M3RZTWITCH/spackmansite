@@ -2,11 +2,6 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-
-    <title>Spackman Home</title>
-    <meta name="description" content="Homepage Spackman photography">
-    <meta name="author" content="Me">
 	<?php include 'header.php'?>
 	<script src="js/vendor/cycle2.js"></script>
 </head>
@@ -34,24 +29,24 @@
 				<p class="text_section">My name is Anya Spackman. I want to thank you for taking the time to stop by and view the results of something I love doing.  
 				I enjoy taking happy vibrant photos and turning them into lasting memories for you to keep! I strive to treat my clients like I treat my friends.</p>
  
-				<p itemscope itemtype ="http://schema.org/Review" class="text_section"><span class="bolder">Testimonial</span>
+				<p itemscope itemtype ="http://schema.org/Review" class="text_section"><span class="bolder">Testimonial:</span>
 				<p itemprop="reviewBody" itemtype ="http://schema.org/Text" class="testimonial text_section">"Anya was a delightful surprise to us.  She had an air of professionalism about her, yet able to convey a confident and relaxed atmosphere to my family and I.  We being fairly shy
 				and indecisive did not hinder Anya.  We had no real foreplanning, but she was able to pick a destination and during the shoot help and guide us much like a director for a film.  Her creativity and attention
 				to the minute details allowed her to produce idealistic photos and scenes.  Also the editing that she did was simplistic and tactful as to not detract from the photo itself but instead bring them
 				to life."</p><p>-The Santiago's</p>
 				</p>
 				
-				<p itemscope itemtype ="http://schema.org/PriceSpecification" class="text_section"><span class="bolder">My Rates</span> 
+				<p itemscope itemtype ="http://schema.org/PriceSpecification" class="text_section"><span class="bolder">My Rates:</span> 
                 
 				<ul><li>Potrait: ( on location, individual, or family) - <span itemprop="maxPrice" itemtype ="http://schema.org/Number">150</span>$</li>
 				<li>Model/Entertainer portfolio - 150$</li>
 				<li>Event - 145$ an hour</li>
 				<li>Extra Service: ( image editing/ airbrushing) - <span itemprop="minPrice" itemtype ="http://schema.org/Number">50</span>$</li></ul></p>
 				
-				<p class="text_section"><span class="bolder">Area</span>
-					<p itemprop="areaServed" itemtype ="http://schema.org/Text">Dallas, TX</p>
-					<p itemprop="areaServed" itemtype ="http://schema.org/Text">Fort Worth, TX</p>
-					<p itemprop="areaServed" itemtype ="http://schema.org/Text">Arlington, TX</p>
+				<p class="text_section"><span class="bolder">Areas Served: </span>
+					<ul> <li><span itemprop="areaServed" itemtype ="http://schema.org/Text">Dallas, TX;</span>
+					<span itemprop="areaServed" itemtype ="http://schema.org/Text">Fort Worth, TX;</span>
+					<span itemprop="areaServed" itemtype ="http://schema.org/Text">Arlington, TX</span></li></ul>
 				</p>
 			</div>
         </div>

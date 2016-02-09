@@ -46,3 +46,10 @@ body{background-color:#111517}
 #modal_image{vertical-align: bottom}
 #zoom-modal.reveal{visibility: visible; opacity: 1}
 #banner_image{display: block; margin-left: auto; margin-right: auto;}
+.grid-item {
+  margin-bottom: 0.5rem;
+}
+.grid-image{margin-top: 2em; cursor: pointer}
+.grid_image_wrapper{border: 3px solid white; position: relative}
+#page-wrap{margin-top: 15px}		
+.hover_zoom_active{position:absolute; bottom:0; left: 0; right:0; overflow: hidden; height: 100%; width: 100%; display: block; background: rgba(0, 0, 0, 0.6)}

@@ -2,11 +2,7 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
 
-    <title>Spackman Home</title>
-    <meta name="description" content="Homepage Spackman photography">
-    <meta name="author" content="Me">
 	<?php include 'header.php'?>
 	<script src="js/vendor/cycle2.js"></script>
 </head>
