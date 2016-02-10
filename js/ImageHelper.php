@@ -2,8 +2,8 @@
 //need to protect against injection.  white list it
 	$sliderimages = scandir('/home/aspackman/public_html/img/homepageslider', 1);
 	$whitelistgalleries = scandir('/home/aspackman/public_html/img/galleries', 1);
-	$headerimagefileprefix = "\\img\\homepageslider\\";
-	$sidebarimage = "\\img\/FloralSpackman05.jpg";
+	$headerimagefileprefix = "/img/homepageslider/";
+	$sidebarimage = "/img/FloralSpackman05.jpg";
 	$gallery = '';
 	$gallerypath = '';
 	$isMainGallery = false;
