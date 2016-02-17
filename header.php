@@ -22,7 +22,7 @@
 <meta name="description" content="Anya Spackman delivers beautiful photos for whatever occasion is at hand.  Proudly serving the Dallas, Arlington, and Fort Worth areas of Texas.">
 <meta name="author" content="Chris Santiago">
 <meta property="og:title" content="Spackman Photography"/>
-<meta property="og:image" content="http://spackmanphotography.com//img/homepageslider/lolly.jpg"/>
+<meta property="og:image" content="http://spackmanphotography.com//img/SharePic.jpg"/>
 <meta property="og:site_name" content="Anya Spackman Photography"/>
 <meta property="og:description" content="Anya Spackman delivers beautiful photos for whatever occasion is at hand.  Proudly serving the Dallas, Arlington, and Fort Worth areas of Texas."/>
 	
