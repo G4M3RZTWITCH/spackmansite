@@ -13,7 +13,7 @@
 		$isMainGallery = $gallery === "MainGallery";
 		if(!empty($gallery) && strlen($gallery) > 0){
 			$gallerypath = 'img/galleries/' . $gallery . '/';
-			$galleryimages = scandir('/img/galleries/' . $gallery, 1);
+			$galleryimages = scandir('../img/galleries/' . $gallery, 1);
 		}
 	}
 	$counter = 1;
