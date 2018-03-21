@@ -1,7 +1,7 @@
 <?php 
 //need to protect against injection.  white list it
-	$sliderimages = scandir('/img/homepageslider', 1);
-	$whitelistgalleries = scandir('/img/galleries', 1);
+	$sliderimages = scandir('../img/homepageslider', 1);
+	$whitelistgalleries = scandir('../img/galleries', 1);
 	$headerimagefileprefix = "/img/homepageslider/";
 	$sidebarimage = "/img/FloralSpackman05.jpg";
 	$gallery = '';
