@@ -1,5 +1,5 @@
 <?php 
-	$galleryimages = scandir('/img/galleries', 1);
+	$galleryimages = scandir('../img/galleries', 1);
 	$galleriesprefix = "\\img\\gallaries\\";
 	$counter = 1;
 	header('Content-Type: application/javascript');
