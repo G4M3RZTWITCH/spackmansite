@@ -1,7 +1,7 @@
 <?php 
 //need to protect against injection.  white list it
-	$sliderimages = scandir('/home/aspackman/public_html/img/homepageslider', 1);
-	$whitelistgalleries = scandir('/home/aspackman/public_html/img/galleries', 1);
+	$sliderimages = scandir('/img/homepageslider', 1);
+	$whitelistgalleries = scandir('/img/galleries', 1);
 	$headerimagefileprefix = "/img/homepageslider/";
 	$sidebarimage = "/img/FloralSpackman05.jpg";
 	$gallery = '';
@@ -13,7 +13,7 @@
 		$isMainGallery = $gallery === "MainGallery";
 		if(!empty($gallery) && strlen($gallery) > 0){
 			$gallerypath = 'img/galleries/' . $gallery . '/';
-			$galleryimages = scandir('/home/aspackman/public_html/img/galleries/' . $gallery, 1);
+			$galleryimages = scandir('/img/galleries/' . $gallery, 1);
 		}
 	}
 	$counter = 1;
