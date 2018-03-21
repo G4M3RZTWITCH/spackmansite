@@ -26,10 +26,10 @@
 <meta property="og:site_name" content="Anya Spackman Photography"/>
 <meta property="og:description" content="Anya Spackman delivers beautiful photos for whatever occasion is at hand.  Proudly serving the Dallas, Arlington, and Fort Worth areas of Texas."/>
 	
-<link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css" />
+<link rel="stylesheet" href="css/foundation.css" />
 <link rel="stylesheet" href="css/globalstyles.css" />
 <script src="js/vendor/modernizr.js"></script>
 <script src="js/knockout-min.js"></script>
-<script src="http://cdn.foundation5.zurb.com/foundation.js"></script>
+<script src="js/foundation.min.js"></script>
 <script src="js/ImageHelper.php<?php echo $appender?>"></script>
 <script src="js/MenuHelper.php"></script>
